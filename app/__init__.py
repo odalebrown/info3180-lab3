@@ -1,4 +1,12 @@
 from flask import Flask
+from flask_mail import Mail
+
 
 app = Flask(__name__)
-from app import views
+app.config['SECRET_KEY'] = 'enter some random passphrase'
+app.config['MAIL_SERVER'] = 'smtp.mail.io'
+app.config['MAIL_PORT'] = '465' # (or try 2525)
+app.config['MAIL)USERNAME'] = 'enter your mailtrap smtp username'
+app.config['MAIL_PASSWORD'] = 'enter your mailtrap smtp password'
+
+mail = Mail(app)
