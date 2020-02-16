@@ -8,6 +8,8 @@ from app import mail
 from flask_mail import Message
 from app import app
 from flask import render_template, request, redirect, url_for, flash
+from app import mail
+from flask_mail import Message
 
 
 
@@ -25,11 +27,11 @@ def home():
 @app.route('/about/')
 def about():
     """Render the website's about page."""
-    return render_template('about.html', name="Mary Jane")
+    return render_template('about.html', name="Odale Brown")
 
 @app.route('/contact', methods = ['GET','POST'])
 def contact():
-    form = myForm()
+    form = ContactForm()
     if request.method == 'POST':
         if form.validate_on_submit():
             name = form.name.data

@@ -10,3 +10,4 @@ app.config['MAIL)USERNAME'] = 'enter your mailtrap smtp username'
 app.config['MAIL_PASSWORD'] = 'enter your mailtrap smtp password'
 
 mail = Mail(app)
+from app import views
